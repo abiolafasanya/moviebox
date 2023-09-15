@@ -16,7 +16,7 @@ const SearchDropdown = ({ result, errorMessage, loading }: DropdownProps) => {
         <div className='flex flex-col gap-1 items-center justify-center w-full shadow-sm'>
           {Array.isArray(result) && result.length > 0 ? (
             result.map((search) => (
-              <Link key={search.id} href={`/${search.id}`} className='w-full'>
+              <Link key={search.id} href={`/movie/${search.id}`} className='w-full'>
                 <SearchResult key={search.id} result={search} />
               </Link>
             ))
