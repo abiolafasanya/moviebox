@@ -19,7 +19,6 @@ const SearchResult = ({ result }: Props) => {
           width={24}
           height={24}
           className='rounded-full w-6 h-6'
-          data-textid="movie-poster"
         />
       ) : (
         <Image
@@ -28,14 +27,13 @@ const SearchResult = ({ result }: Props) => {
           className='shrink-0 rounded-full w-6 h-6'
           width={24}
           height={24}
-          data-textid="movie-poster"
         />
       )}
       <div className='flex overflow-hidden flex-col pl-3'>
-        <span className='whitespace-nowrap overflow-hidden text-ellipsis text-sm' data-textid="movie-title">
+        <span className='whitespace-nowrap overflow-hidden text-ellipsis text-sm'>
           {result.title}
-        </span>{' '}
-        <span className='whitespace-nowrap text-xs text-pink-500 overflow-hidden text-ellipsis' data-textid="movie-release-date">
+        </span>
+        <span className='whitespace-nowrap text-xs text-pink-500 overflow-hidden text-ellipsis'>
           {formatDate(result.release_date)}
         </span>
       </div>

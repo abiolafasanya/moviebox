@@ -14,7 +14,6 @@ const Content = ({ rated }: { rated: TopRated | null }) => {
         <div className='container mx-auto w-full h-full'>
           <div className='w-full h-full grid grid-cols-1 place-content-center max-w-[420px] gap-5'>
             <h2
-              data-testid=' movie-title'
               className='sm:text-2xl md:text-4xl lg:text-5xl leading-tight font-semibold text-white'
             >
               {rated.original_title}
@@ -38,17 +37,9 @@ const Content = ({ rated }: { rated: TopRated | null }) => {
                 </span>
               </div>
             </section>
-            <p className='text-white text-base' data-testid='movie-overview'>
+            <p className='text-white text-base'>
               {rated.overview}
             </p>
-            {/* unimportant section */}
-            <p className='hidden' data-testid='movie-release-date'>
-              {new Date(rated.release_date).toUTCString()}
-            </p>
-            <p className='hidden' data-testid='movie-runtime'>
-              {90}
-            </p>
-            {/* unimportant section */}
             <div className='flex w-full'>
               <button className='bg-pink-700 text-white rounded-md py-3 px-7 flex gap-3 items-center'>
                 <FaPlayCircle />

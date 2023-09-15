@@ -2,20 +2,19 @@
 import Image from 'next/image';
 import Navigation from './navigation';
 import Content from './content';
-import Axios from '@/libs/axios';
 import { useEffect, useState } from 'react';
 import { TopRated } from '@/types/movie';
 import MovieController from '@/app/(home)/hooks/actions';
 
 const Hero = () => {
   const [rated, setRated] = useState<TopRated | null>(null);
-  const [index, setIndex] = useState(Math.floor(Math.random() * 20) + 1);
+  const index = Math.floor(Math.random() * 20) + 1;
   async function fetchRatedMovies(index: number) {
     const data = (await MovieController.index()).rated;
     setRated(data[index]);
   }
   useEffect(() => {
-    fetchRatedMovies(index).then(() => console.log('fetched'));
+    fetchRatedMovies(index).then(() => {});
   }, [index]);
   const posterBaseUrl = 'https://image.tmdb.org/t/p/w1280';
   return (

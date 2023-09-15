@@ -23,8 +23,8 @@ const Content = () => {
           <Banner poster_path={movie.poster_path} movie={movie} />
           <section className='flex flex-col justify-between md:flex-row my-5 md:gap-5 md:items-center flex-wrap'>
             <h3 className='text-xl font-semibold'>
-              <span data-testid='movie-title'>{movie.original_title}</span>:{' '}
-              <span>{movie?.tagline}</span>{' '}
+              <span data-testid='movie-title'>{movie?.original_title}</span>
+              <span>{movie?.tagline}</span>
             </h3>
             <div data-testid='movie-release-date'>
               {getUTCDate(movie.release_date).toUTCString()}

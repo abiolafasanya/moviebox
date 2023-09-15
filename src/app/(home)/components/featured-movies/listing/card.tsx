@@ -30,7 +30,7 @@ const Card = ({ movie }: { movie: popularMovieType }) => {
 
   return (
     <article className='w-full relative' data-testid='movie-card'>
-      <Link href={`/${movie.id}`} className='w-full'>
+      <Link href={`/movie/${movie.id}`} className='w-full'>
         <Image
           src={`${posterBaseUrl}${movie.poster_path}`}
           alt=''

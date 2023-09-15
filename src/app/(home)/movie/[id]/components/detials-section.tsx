@@ -1,7 +1,7 @@
 import { TfiMenuAlt } from 'react-icons/tfi';
 import { IoTicket } from 'react-icons/io5';
 import Image from 'next/image';
-import useMovies from '../../hooks/useMovies';
+import useMovies from '../../../hooks/useMovies';
 import Link from 'next/link';
 
 const DetailsSection = () => {

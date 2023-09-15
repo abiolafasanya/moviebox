@@ -4,7 +4,7 @@ import Content from './components/content';
 import SideBar from './components/sidebar';
 import { useRouter } from 'next/navigation';
 import { ServerExceptionError } from '@/libs/exceptions';
-import useMovies from '../hooks/useMovies';
+import useMovies from '../../hooks/useMovies';
 
 const DetailPage = () => {
   const { error } = useMovies();

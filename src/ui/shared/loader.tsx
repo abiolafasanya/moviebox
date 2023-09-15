@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const Loader = () => {
+const Loader = ({message = 'Loading...'}: {message?: string}) => {
   return (
     <div className='flex flex-col h-screen w-full items-center justify-center'>
       <div className='flex gap-4'>
@@ -27,7 +27,7 @@ const Loader = () => {
         />
       </div>
       <h2 className='text-4xl text-center font-semibold text-pink-500'>
-        Loading...
+        {message}
       </h2>
     </div>
   );
