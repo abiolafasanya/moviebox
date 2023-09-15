@@ -2,11 +2,11 @@
 import { AxiosError } from 'axios';
 import React, { ReactNode, createContext, useEffect, useState } from 'react';
 import MovieController from './actions';
-import { popularMovieType } from '@/types/movie';
+import { TopRated, popularMovieType } from '@/types/movie';
 
 export interface Movie {
   loading: boolean;
-  movies: popularMovieType[];
+  movies: TopRated[];
   error: string;
 }
 const MoviesContext = createContext({} as Movie);
@@ -22,7 +22,7 @@ export const MovieContextProvider = ({ children }: { children: ReactNode }) => {
 
   const fetchMovies = async () => {
     try {
-      const data = (await MovieController.index()).movies;
+      const data = (await MovieController.index()).rated;
       setMovies(data);
       setLoading(false);
     } catch (error) {

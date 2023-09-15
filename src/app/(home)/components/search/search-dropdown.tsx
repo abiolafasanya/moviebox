@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import SearchResult from './result';
-import { popularMovieType } from '@/types/movie';
+import { TopRated, popularMovieType } from '@/types/movie';
 
 interface DropdownProps {
-  result: popularMovieType[];
+  result: TopRated[];
   errorMessage: string;
   loading: boolean;
 }

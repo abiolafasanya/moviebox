@@ -3,7 +3,7 @@ import useMovies from '@/app/(home)/hooks/useMovies';
 import Card from './card';
 import { Fragment } from 'react';
 import MovieLoader from './movies-loader';
-import { popularMovieType } from '@/types/movie';
+import { TopRated, popularMovieType } from '@/types/movie';
 
 const MoviesListing = () => {
   const { movies, loading } = useMovies();
@@ -16,7 +16,7 @@ const MoviesListing = () => {
   );
 };
 
-const Movie = ({ movies }: { movies: popularMovieType[] }) => {
+const Movie = ({ movies }: { movies: TopRated[] }) => {
   return (
     <Fragment>
       {movies.slice(0, 10).map((movie) => (

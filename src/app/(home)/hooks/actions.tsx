@@ -2,7 +2,7 @@ import Axios from '@/libs/axios';
 import { TopRated, popularMovieType } from '@/types/movie';
 
 export interface Movie {
-  results: popularMovieType[];
+  results: TopRated[];
   page: number;
   total_pages: number;
   total_results: number;

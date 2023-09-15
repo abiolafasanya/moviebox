@@ -1,4 +1,4 @@
-import { Genre, popularMovieType } from '@/types/movie';
+import { Genre, TopRated, popularMovieType } from '@/types/movie';
 import { formatDate } from '@/utils/formatter';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -6,7 +6,7 @@ import { BsFillHeartFill } from 'react-icons/bs';
 import MoviesController from '@/app/(home)/hooks/actions';
 import Link from 'next/link';
 
-const Card = ({ movie }: { movie: popularMovieType }) => {
+const Card = ({ movie }: { movie: TopRated }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [genres, setGenres] = useState<Genre[]>([]);
   const posterBaseUrl = 'https://image.tmdb.org/t/p/w1280/';
@@ -58,7 +58,7 @@ const Card = ({ movie }: { movie: popularMovieType }) => {
           <span>Realease Date</span>
           <span data-testid='movie-release-date'>
             {formatDate(
-              movie.release_date ? movie.release_date : movie.first_air_date
+              movie.release_date ? movie.release_date : ''
             )}
           </span>
         </p>

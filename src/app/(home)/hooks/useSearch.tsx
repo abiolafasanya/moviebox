@@ -2,11 +2,11 @@
 import Axios from '@/libs/axios';
 import { ChangeEvent, useState } from 'react';
 import { Movie } from './actions';
-import { popularMovieType } from '@/types/movie';
+import { TopRated, popularMovieType } from '@/types/movie';
 import { AxiosError } from 'axios';
 
 const useSearch = () => {
-  const [result, setResult] = useState<popularMovieType[]>([]);
+  const [result, setResult] = useState<TopRated[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showResult, setShowResult] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');

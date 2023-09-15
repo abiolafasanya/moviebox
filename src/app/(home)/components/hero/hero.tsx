@@ -8,7 +8,7 @@ import MovieController from '@/app/(home)/hooks/actions';
 
 const Hero = () => {
   const [rated, setRated] = useState<TopRated | null>(null);
-  const index = Math.floor(Math.random() * 20) + 1;
+  const[ index, setIndex] = useState(() => Math.floor(Math.random() * 20) + 1);
   async function fetchRatedMovies(index: number) {
     const data = (await MovieController.index()).rated;
     setRated(data[index]);

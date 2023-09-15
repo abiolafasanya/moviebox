@@ -1,10 +1,10 @@
 import React from 'react';
-import { popularMovieType } from '@/types/movie';
+import { TopRated, popularMovieType } from '@/types/movie';
 import Image from 'next/image';
 import { formatDate } from '@/utils/formatter';
 
 interface Props {
-  result: popularMovieType;
+  result: TopRated;
 }
 
 const SearchResult = ({ result }: Props) => {

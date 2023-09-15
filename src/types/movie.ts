@@ -72,7 +72,7 @@ export type TopRated = {
   poster_path: string;
   release_date: string;
   title: string;
-  video: boolean;
+  videos: MovieVideo;
   vote_average: number;
   vote_count: number;
 };
