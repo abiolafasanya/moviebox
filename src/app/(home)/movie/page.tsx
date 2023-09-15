@@ -1,13 +1,13 @@
-"use client"
+'use client';
 import Loader from '@/ui/shared/loader';
 import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 const MoviePageRedirect = () => {
   const router = useRouter();
-  const REDIRECT = true
-  if(REDIRECT) {
-      router.push('/');
-  }
+  useEffect(() => {
+    router.push('/');
+  }, []);
   return <Loader message='Redirecting' />;
 };
 
