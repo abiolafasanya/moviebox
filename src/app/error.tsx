@@ -10,7 +10,7 @@ const NotFoundPage = ({
   reset: () => void;
 }) => {
   return (
-    <div className='flex flex-col items-center justify-center h-screen w-full'>
+    <div className='flex flex-col items-center justify-center h-screen w-full text-black'>
       <Image
         src={'/500.gif'}
         width={300}
