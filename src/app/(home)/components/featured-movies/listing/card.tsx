@@ -41,7 +41,7 @@ const Card = ({ movie }: { movie: TopRated }) => {
     genreId.map((id) => genres.filter((i) => i.id == id)[0]?.name).join(', ');
 
   return (
-    <article className='w-full relative' data-testid='movie-card'>
+    <article className='w-full relative text-black' data-testid='movie-card'>
       <Link href={`/movies/${movie.id}`} className='w-full'>
         <Image
           src={`${posterBaseUrl}${movie.poster_path}`}
