@@ -22,7 +22,7 @@ const Content = ({ rated }: { rated: TopRated | null }) => {
               <div className='flex gap-2 text-white'>
                 <Image src='/imdb.svg' alt='imdb logo' width={35} height={17} />
                 <span className='text-sm text-white/80'>
-                  {(rated.vote_average / 10) * 100}/100
+                  {(rated.popularity.toFixed(0))}/100
                 </span>
               </div>
               <div className='flex gap-2 text-white'>

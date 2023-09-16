@@ -69,7 +69,7 @@ const Card = ({ movie }: { movie: TopRated }) => {
           <div className='flex gap-2'>
             <Image src='/imdb.svg' alt='imdb logo' width={35} height={17} />
             <span className='text-sm'>
-              {Math.round((movie.vote_average / 10) * (movie.vote_count / 100))}
+              {Math.round((movie.popularity))}
               /100
             </span>
           </div>

@@ -6,10 +6,7 @@ const Credits = ({ credits }: { credits: creditsType }) => {
     <div className='flex gap-2 flex-col mt-5'>
       {Array.isArray(credits.crew) &&
         credits.crew.length > 0 &&
-        credits.crew
-          .slice(0, 6)
-          .toSorted()
-          .map((crew) => <Crew key={crew.id+'_'+crew.credit_id} crew={crew} />)}
+        credits.crew?.slice(0, 3)?.map((crew) => <Crew key={crew.id+'_'+crew.credit_id} crew={crew} />)}
     </div>
   );
 };
