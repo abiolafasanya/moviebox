@@ -50,9 +50,9 @@ const Content = () => {
               <span>{rating(movie.vote_average)}</span>
             </div>
           </section>
-          <section className='flex flex-col md:flex-row w-full'>
+          <section className='flex flex-col md:flex-row w-full text-black'>
             <div className='md:w-3/4'>
-              <p className='lg:pr-12' data-testid='movie-overview'>
+              <p className='lg:pr-12 text-black' data-testid='movie-overview'>
                 {movie.overview}
               </p>
               <CreditsInfo credits={credits} />
