@@ -13,6 +13,18 @@ const Card = ({ movie }: { movie: TopRated }) => {
   const [liked, setLiked] = useState(false);
   const rating = (val: number) => `${val * 10}%`;
   const popularity = (val: number) => (Math.round(val / 100) * 10).toFixed(1);
+  const [show, setShow] = useState(false);
+
+  const handleSetLiked = (liked: boolean) => {
+    setShow(false);
+    setLiked((liked) => !liked);
+    if (!liked) {
+      setShow(true);
+      setTimeout(() => {
+        setShow(false);
+      }, 1000);
+    }
+  };
 
   const fetchGeneres = async () => {
     const data = (await MoviesController.index()).genres;
@@ -45,11 +57,12 @@ const Card = ({ movie }: { movie: TopRated }) => {
           <span className='rounded-2xl h-8 px-5 bg-white/50 font-medium flex items-center justify-center'>
             Popular
           </span>
-          <button className='outline-none rounded-full h-8 w-8 bg-white/50 flex items-center justify-center'>
+          <button className='relative outline-none rounded-full h-8 w-8 bg-white/50 flex items-center justify-center'>
             <BsFillHeartFill
               className={liked ? 'text-pink-500' : 'text-white/90'}
-              onClick={() => setLiked((liked) => !liked)}
+              onClick={() => handleSetLiked(liked)}
             />
+            {show && <LikedNotification />}
           </button>
         </div>
       </div>
@@ -57,9 +70,7 @@ const Card = ({ movie }: { movie: TopRated }) => {
         <p className='text-sm text-gray-500 my-2 font-semibold space-x-4'>
           <span>Realease Date</span>
           <span data-testid='movie-release-date'>
-            {formatDate(
-              movie.release_date ? movie.release_date : ''
-            )}
+            {formatDate(movie.release_date ? movie.release_date : '')}
           </span>
         </p>
         <h3 className='text-2xl font-semibold my-2' data-testid='movie-title'>
@@ -69,7 +80,7 @@ const Card = ({ movie }: { movie: TopRated }) => {
           <div className='flex gap-2'>
             <Image src='/imdb.svg' alt='imdb logo' width={35} height={17} />
             <span className='text-sm'>
-              {Math.round((movie.popularity))}
+              {Math.round(movie.popularity)}
               /100
             </span>
           </div>
@@ -86,4 +97,13 @@ const Card = ({ movie }: { movie: TopRated }) => {
   );
 };
 
+const LikedNotification = () => {
+  return (
+    <>
+      <span className='absolute transition delay-700 ease-in-out top-10 border-2 border-pink-500 text-sm rounded-2xl bg-pink-100 text-pink-500 px-5 py-1 right-0'>
+        Saved!
+      </span>
+    </>
+  );
+};
 export default Card;
