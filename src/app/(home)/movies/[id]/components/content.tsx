@@ -27,7 +27,7 @@ const Content = () => {
               
             </h3>
             <div data-testid='movie-release-date'>
-              {getUTCDate(movie.release_date).toUTCString()}
+              { new Date(movie.release_date).toUTCString()}
             </div>
             <div>
               Mins: <span data-testid='movie-runtime'>{movie.runtime}</span>
