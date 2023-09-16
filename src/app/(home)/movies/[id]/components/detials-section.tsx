@@ -21,7 +21,7 @@ const DetailsSection = () => {
         {movies
           .slice(0, 3)
           .map((movie) => (
-            <Link key={movie.id} href={`/movie/${movie.id}/`}>
+            <Link key={movie.id} href={`/movies/${movie.id}/`}>
               <div className='max-h-64 w-full overflow-hidden'>
                 <Image
                   src={
