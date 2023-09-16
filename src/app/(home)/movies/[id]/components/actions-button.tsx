@@ -2,7 +2,7 @@ import { PiCaretDownBold } from "react-icons/pi";
 
 const ActionButtons = () => {
   return (
-    <div className='flex flex-col gap-2 md:gap-0 md:flex-row md:border-2 md:rounded-lg bg-white my-5'>
+    <div className='flex flex-col gap-2 md:gap-0 md:flex-row md:border-2 md:rounded-lg bg-white my-5 text-black'>
       <button className='outline-none bg-pink-500 text-pink-50 py-3 md:w-1/4 rounded-lg'>
         Top rated Movie
       </button>
