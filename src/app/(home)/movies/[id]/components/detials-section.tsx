@@ -8,7 +8,7 @@ const DetailsSection = () => {
   const { movies } = useMovies();
   const posterBaseUrl = 'https://image.tmdb.org/t/p/w1280/';
   return (
-    <div className='md:w-[35%]'>
+    <div className='md:w-[35%] text-black'>
       <div className='flex flex-col gap-3'>
         <button className='flex items-center justify-center gap-2 px-5 py-2 rounded-md outline-none bg-pink-500 text-pink-50'>
           <IoTicket /> <span>See Showtime</span>
