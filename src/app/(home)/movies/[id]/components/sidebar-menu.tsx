@@ -6,14 +6,14 @@ interface MenuProps {
 }
 const SideBarMenu = ({ action, current }: MenuProps) => {
   return (
-    <menu className=' space-y-2'>
+    <menu className=' space-y-2 text-black'>
       {menus.map((menu, index) => (
         <button
           key={index}
           className={`flex gap-2 px-5 p-3 w-full ${
             index === current
               ? 'border-r-4 border-pink-500 bg-pink-200 text-pink-500'
-              : ''
+              : 'text-black'
           }`}
           onClick={() => action(index)}
         >
