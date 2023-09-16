@@ -20,4 +20,4 @@ npm run build
 ```
 5. setup your env variable visit TMDB website to get your API token or key
 
-> That's it takes to setup this project
+> That's all it takes to setup this project
