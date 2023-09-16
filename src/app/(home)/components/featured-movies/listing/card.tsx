@@ -67,10 +67,9 @@ const Card = ({ movie }: { movie: TopRated }) => {
         </div>
       </div>
       <section>
-        <p className='text-sm text-gray-500 my-2 font-semibold space-x-4'>
-          <span>Realease Date</span>
+        <p className='text-sm text-gray-500 my-2 font-semibold'>
           <span data-testid='movie-release-date'>
-            {formatDate(movie.release_date ? movie.release_date : '')}
+            {movie?.release_date}
           </span>
         </p>
         <h3 className='text-2xl font-semibold my-2' data-testid='movie-title'>
