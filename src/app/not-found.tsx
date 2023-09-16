@@ -9,7 +9,7 @@ interface NotFoundProps {
 
 export default function NotFound({ error, reset }: NotFoundProps) {
   return (
-    <div className='flex flex-col items-center justify-center h-screen w-full'>
+    <div className='flex flex-col items-center justify-center h-screen w-full text-black'>
       <Image
         src={'/404.gif'}
         width={300}
